@@ -1,0 +1,312 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: true
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  ipv6: true
+  default-nameserver:
+  - 114.114.114.114
+  - 223.5.5.5
+  enhanced-mode: redir-host
+  nameserver:
+  - https://dns.alidns.com/dns-query
+  - https://doh.pub/dns-query
+  fallback:
+  - 114.114.114.114
+  - 223.5.5.5
+proxies: []
+proxy-providers:
+  dingyue1:
+    url: https://heimayun.tk/api/v1/client/subscribe?token=1d5b45595d34f9b74d619fdff39144f4
+    interval: 86400
+  dingyue1-hk:
+    url: https://heimayun.tk/api/v1/client/subscribe?token=1d5b45595d34f9b74d619fdff39144f4
+    interval: 86400
+    filter: ".*"
+  dingyue1-kr:
+    url: https://heimayun.tk/api/v1/client/subscribe?token=1d5b45595d34f9b74d619fdff39144f4
+    interval: 86400
+    filter: ".*"
+  dingyue1-jp:
+    url: https://heimayun.tk/api/v1/client/subscribe?token=1d5b45595d34f9b74d619fdff39144f4
+    interval: 86400
+    filter: ".*"
+  dingyue1-us:
+    url: https://heimayun.tk/api/v1/client/subscribe?token=1d5b45595d34f9b74d619fdff39144f4
+    interval: 86400
+    filter: ".*"
+proxy-groups:
+- name: "\U0001F530 Proxy"
+  type: select
+  proxies:
+  - ♻ Auto
+  - "\U0001F1ED\U0001F1F0 Hongkong"
+  - "\U0001F1F0\U0001F1F7 Korea"
+  - "\U0001F1EF\U0001F1F5 Japan"
+  - "\U0001F1FA\U0001F1F8 America"
+- name: ♻ Auto
+  use:
+  - "dingyue1"
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: "300"
+- name: "\U0001F1ED\U0001F1F0 Hongkong"
+  use:
+  - "dingyue1-hk"
+  proxies: []
+  type: select
+- name: "\U0001F1F0\U0001F1F7 Korea"
+  use:
+  - "dingyue1-kr"
+  proxies: []
+  type: select
+- name: "\U0001F1EF\U0001F1F5 Japan"
+  use:
+  - "dingyue1-jp"
+  proxies: []
+  type: select
+- name: "\U0001F1FA\U0001F1F8 America"
+  use:
+  - "dingyue1-us"
+  proxies: []
+  type: select
+- name: NeteaseMusic
+  type: select
+  proxies:
+  - "\U0001F3AF Direct"
+  - "\U0001F530 Proxy"
+  - "\U0001F1ED\U0001F1F0 Hongkong"
+  - "\U0001F1F0\U0001F1F7 Korea"
+  - "\U0001F1EF\U0001F1F5 Japan"
+  - "\U0001F1FA\U0001F1F8 America"
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/NetEase.png
+- name: Bilibili
+  type: select
+  proxies:
+  - "\U0001F3AF Direct"
+  - "\U0001F530 Proxy"
+  - "\U0001F1ED\U0001F1F0 Hongkong"
+  - "\U0001F1F0\U0001F1F7 Korea"
+  - "\U0001F1EF\U0001F1F5 Japan"
+  - "\U0001F1FA\U0001F1F8 America"
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/bilibili.png
+- name: Microsoft
+  type: select
+  proxies:
+  - "\U0001F3AF Direct"
+  - "\U0001F530 Proxy"
+  - "\U0001F1ED\U0001F1F0 Hongkong"
+  - "\U0001F1F0\U0001F1F7 Korea"
+  - "\U0001F1EF\U0001F1F5 Japan"
+  - "\U0001F1FA\U0001F1F8 America"
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/Microsoft.png
+- name: Apple
+  type: select
+  proxies:
+  - "\U0001F3AF Direct"
+  - "\U0001F530 Proxy"
+  - "\U0001F1ED\U0001F1F0 Hongkong"
+  - "\U0001F1F0\U0001F1F7 Korea"
+  - "\U0001F1EF\U0001F1F5 Japan"
+  - "\U0001F1FA\U0001F1F8 America"
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/Apple.png
+- name: Telegram
+  proxies:
+  - "\U0001F530 Proxy"
+  - "\U0001F1ED\U0001F1F0 Hongkong"
+  - "\U0001F1F0\U0001F1F7 Korea"
+  - "\U0001F1EF\U0001F1F5 Japan"
+  - "\U0001F1FA\U0001F1F8 America"
+  type: select
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/Telegram.png
+- name: Youtube
+  proxies:
+  - "\U0001F530 Proxy"
+  - "\U0001F1ED\U0001F1F0 Hongkong"
+  - "\U0001F1F0\U0001F1F7 Korea"
+  - "\U0001F1EF\U0001F1F5 Japan"
+  - "\U0001F1FA\U0001F1F8 America"
+  type: select
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/Youtube.png
+- name: Tiktok
+  type: select
+  proxies:
+  - "\U0001F530 Proxy"
+  - "\U0001F1ED\U0001F1F0 Hongkong"
+  - "\U0001F1F0\U0001F1F7 Korea"
+  - "\U0001F1EF\U0001F1F5 Japan"
+  - "\U0001F1FA\U0001F1F8 America"
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/Tiktok.png
+- name: Netflix
+  type: select
+  proxies:
+  - "\U0001F530 Proxy"
+  - "\U0001F1ED\U0001F1F0 Hongkong"
+  - "\U0001F1F0\U0001F1F7 Korea"
+  - "\U0001F1EF\U0001F1F5 Japan"
+  - "\U0001F1FA\U0001F1F8 America"
+  icon: https://raw.githubusercontent.com/yuji01/clash/main/stash/icon/Netflix.png
+- name: "\U0001F6D1 Adblock"
+  proxies:
+  - REJECT
+  - DIRECT
+  - "\U0001F530 Proxy"
+  type: select
+- name: "\U0001F3AF Direct"
+  proxies:
+  - DIRECT
+  - REJECT
+  - "\U0001F530 Proxy"
+  type: select
+  _index: 9
+- name: "\U0001F41F Final"
+  proxies:
+  - "\U0001F530 Proxy"
+  - "\U0001F3AF Direct"
+  - "\U0001F6D1 Adblock"
+  - "\U0001F1ED\U0001F1F0 Hongkong"
+  - "\U0001F1F0\U0001F1F7 Korea"
+  - "\U0001F1EF\U0001F1F5 Japan"
+  - "\U0001F1FA\U0001F1F8 America"
+  type: select
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt
+    path: ./ruleset/reject.yaml
+    interval: 86400
+  icloud:
+    type: http
+    behavior: domain
+    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+  apple:
+    type: http
+    behavior: domain
+    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt
+    path: ./ruleset/apple.yaml
+    interval: 86400
+  google:
+    type: http
+    behavior: domain
+    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt
+    path: ./ruleset/google.yaml
+    interval: 86400
+  proxy:
+    type: http
+    behavior: domain
+    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+  direct:
+    type: http
+    behavior: domain
+    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt
+    path: ./ruleset/direct.yaml
+    interval: 86400
+  private:
+    type: http
+    behavior: domain
+    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt
+    path: ./ruleset/private.yaml
+    interval: 86400
+  gfw:
+    type: http
+    behavior: domain
+    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt
+    path: ./ruleset/gfw.yaml
+    interval: 86400
+  greatfire:
+    type: http
+    behavior: domain
+    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/greatfire.txt
+    path: ./ruleset/greatfire.yaml
+    interval: 86400
+  tld-not-cn:
+    type: http
+    behavior: domain
+    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt
+    path: ./ruleset/tld-not-cn.yaml
+    interval: 86400
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt
+    path: ./ruleset/telegramcidr.yaml
+    interval: 86400
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+  lancidr:
+    type: http
+    behavior: ipcidr
+    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+  applications:
+    type: http
+    behavior: classical
+    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt
+    path: ./ruleset/applications.yaml
+    interval: 86400
+  Netflix:
+    behavior: classical
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/Netflix.yaml
+  Youtube:
+    behavior: classical
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/YouTube.yaml
+  Tiktok:
+    behavior: classical
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/tiktok.yaml
+  Bilibili:
+    behavior: classical
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/Bilibili.yaml
+  NetEaseMusic:
+    behavior: classical
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/NetEaseMusic.yaml
+  Microsoft:
+    behavior: classical
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/Microsoft.yaml
+  BilibiliHMT:
+    behavior: classical
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/BilibiliHMT.yaml
+rules:
+- DOMAIN,BilibiliHMT,Bilibili
+- RULE-SET,Microsoft,Microsoft
+- DOMAIN,NetEaseMusic,NeteaseMusic
+- RULE-SET,Bilibili,Bilibili
+- RULE-SET,telegramcidr,Telegram
+- RULE-SET,Youtube,Youtube
+- RULE-SET,Tiktok,Tiktok
+- RULE-SET,Netflix,Netflix
+- "IP-CIDR,172.168.100.1/24,\U0001F3AF Direct"
+- "RULE-SET,applications,\U0001F3AF Direct"
+- "DOMAIN,clash.razord.top,\U0001F3AF Direct"
+- "DOMAIN,yacd.haishan.me,\U0001F3AF Direct"
+- "RULE-SET,private,\U0001F3AF Direct"
+- "RULE-SET,reject,\U0001F6D1 Adblock"
+- RULE-SET,icloud,Apple
+- RULE-SET,apple,Apple
+- "RULE-SET,google,\U0001F3AF Direct"
+- "RULE-SET,proxy,\U0001F530 Proxy"
+- "RULE-SET,direct,\U0001F3AF Direct"
+- "RULE-SET,lancidr,\U0001F3AF Direct"
+- "RULE-SET,cncidr,\U0001F3AF Direct"
+- "GEOIP,LAN,\U0001F3AF Direct"
+- "GEOIP,CN,\U0001F3AF Direct"
+- "MATCH,\U0001F41F Final"
