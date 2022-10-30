@@ -20,28 +20,28 @@ dns:
 proxies: []
 proxy-providers:
 #放你的订阅链接
-  dingyue1:
+  dingyue1: &Dingyue1
     url: https://xxx?token=1d5b45595d34f9b74d619fdff39144f4
     interval: 86400
+    health-check:
+      enable: true
+      interval: 3600
+      url: http://cp.cloudflare.com/generate_204
 #香港节点
   dingyue1-hk:
-    url: https://xxx?token=1d5b45595d34f9b74d619fdff39144f4
-    interval: 86400
+    <<: *Dingyue1
     filter: ".*"
 #韩国节点
   dingyue1-kr:
-    url: https://xxx?token=1d5b45595d34f9b74d619fdff39144f4
-    interval: 86400
+    <<: *Dingyue1
     filter: ".*"
 #日本节点
   dingyue1-jp:
-    url: https://xxx?token=1d5b45595d34f9b74d619fdff39144f4
-    interval: 86400
+    <<: *Dingyue1
     filter: ".*"
 #美国节点
   dingyue1-us:
-    url: https://xxx?token=1d5b45595d34f9b74d619fdff39144f4
-    interval: 86400
+    <<: *Dingyue1
     filter: ".*"
 proxy-groups:
 - name: "\U0001F530 Proxy"
