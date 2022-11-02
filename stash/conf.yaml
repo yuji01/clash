@@ -178,140 +178,163 @@ proxy-groups:
   - "\U0001F1FA\U0001F1F8 America"
   type: select
 rule-providers:
-  reject:
-    type: http
-    behavior: domain
-    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt
-    path: ./ruleset/reject.yaml
-    interval: 86400
-  icloud:
-    type: http
-    behavior: domain
-    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt
-    path: ./ruleset/icloud.yaml
-    interval: 86400
-  apple:
-    type: http
-    behavior: domain
-    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt
-    path: ./ruleset/apple.yaml
-    interval: 86400
-  google:
-    type: http
-    behavior: domain
-    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt
-    path: ./ruleset/google.yaml
-    interval: 86400
-  proxy:
-    type: http
-    behavior: domain
-    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt
-    path: ./ruleset/proxy.yaml
-    interval: 86400
-  direct:
-    type: http
-    behavior: domain
-    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt
-    path: ./ruleset/direct.yaml
-    interval: 86400
-  private:
-    type: http
-    behavior: domain
-    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt
-    path: ./ruleset/private.yaml
-    interval: 86400
-  gfw:
-    type: http
-    behavior: domain
-    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt
-    path: ./ruleset/gfw.yaml
-    interval: 86400
-  greatfire:
-    type: http
-    behavior: domain
-    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/greatfire.txt
-    path: ./ruleset/greatfire.yaml
-    interval: 86400
-  tld-not-cn:
-    type: http
-    behavior: domain
-    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt
-    path: ./ruleset/tld-not-cn.yaml
-    interval: 86400
-  telegramcidr:
-    type: http
-    behavior: ipcidr
-    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt
-    path: ./ruleset/telegramcidr.yaml
-    interval: 86400
-  cncidr:
-    type: http
-    behavior: ipcidr
-    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt
-    path: ./ruleset/cncidr.yaml
-    interval: 86400
-  lancidr:
-    type: http
-    behavior: ipcidr
-    url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt
-    path: ./ruleset/lancidr.yaml
-    interval: 86400
   applications:
     type: http
     behavior: classical
     url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt
     path: ./ruleset/applications.yaml
     interval: 86400
-  Netflix:
-    behavior: classical
+  NetEaseMusic_domain-text:
+    behavior: domain-text
     interval: 86400
-    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/Netflix.yaml
-  Youtube:
-    behavior: classical
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/NetEaseMusic_domain-text.yaml
+  Microsoft_domain-text:
+    behavior: domain-text
     interval: 86400
-    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/YouTube.yaml
-  Tiktok:
-    behavior: classical
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/Microsoft_domain-text.yaml
+  NetEaseMusic_ipcidr-text:
+    behavior: ipcidr-text
     interval: 86400
-    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/tiktok.yaml
-  Bilibili:
-    behavior: classical
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/NetEaseMusic_ipcidr-text.yaml
+  Youtube_domain-text:
+    behavior: domain-text
     interval: 86400
-    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/Bilibili.yaml
-  NetEaseMusic:
-    behavior: classical
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/YouTube_domain-text.yaml
+  Tiktok_domain-text:
+    behavior: domain-text
     interval: 86400
-    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/NetEaseMusic.yaml
-  Microsoft:
-    behavior: classical
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/Tiktok_domain-text.yaml
+  Telegram_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Telegram_domain-text.yaml
+    path: ./ruleset/telegramcidr.yaml
     interval: 86400
-    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/Microsoft.yaml
-  BilibiliHMT:
-    behavior: classical
+  Telegram_ipcidr-text:
+    behavior: ipcidr-text
     interval: 86400
-    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/BilibiliHMT.yaml
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Telegram_ipcidr-text.yaml
+  Bilibili_domain-text:
+    behavior: domain-text
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/Bilibili_domain-text.yaml
+  BilibiliHMT_domain-text:
+    behavior: domain-text
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/BilibiliHMT_domain-text.yaml
+  BilibiliHMT_ipcidr-text:
+    behavior: ipcidr-text
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/BilibiliHMT_ipcidr-text.yaml
+  Netflix_domain-text:
+    behavior: domain-text
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/Netflix_domain-text.yaml
+  Netflix_ipcidr-text:
+    behavior: ipcidr-text
+    interval: 86400
+    url: https://raw.githubusercontent.com/yuji01/clash/main/rule-set/Netflix_ipcidr-text.yaml
+  Apple_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Apple_domain-text.yaml
+    path: ./ruleset/apple.yaml
+    interval: 86400
+  Icloud_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Icloud_domain-text.yaml
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+  Cn_ipcidr-text:
+    type: http
+    behavior: ipcidr-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Cn_ipcidr-text.yaml
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+  Direct_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Direct_domain-text.yaml
+    path: ./ruleset/direct.yaml
+    interval: 86400
+  Gfw_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Gfw_domain-text.yaml
+    path: ./ruleset/gfw.yaml
+    interval: 86400
+  Google_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Google_domain-text.yaml
+    path: ./ruleset/google.yaml
+    interval: 86400
+  Greatfire_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Greatfire_domain-text.yaml
+    path: ./ruleset/greatfire.yaml
+    interval: 86400
+  Lan_ipcidr-text:
+    type: http
+    behavior: ipcidr-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Lan_ipcidr-text.yaml
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+  Private_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Private_domain-text.yaml
+    path: ./ruleset/private.yaml
+    interval: 86400
+  Proxy_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Proxy_domain-text.yaml
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+  Reject_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Reject_domain-text.yaml
+    path: ./ruleset/reject.yaml
+    interval: 86400
+  Tld-not-cn_domain-text:
+    type: http
+    behavior: domain-text
+    url: https://github.com/yuji01/clash/raw/main/rule-set/Tld-not-cn_domain-text.yaml
+    path: ./ruleset/tld-not-cn.yaml
+    interval: 86400
 rules:
-- DOMAIN,BilibiliHMT,Bilibili
-- RULE-SET,Microsoft,Microsoft
-- DOMAIN,NetEaseMusic,NeteaseMusic
-- RULE-SET,Bilibili,Bilibili
-- RULE-SET,telegramcidr,Telegram
-- RULE-SET,Youtube,Youtube
-- RULE-SET,Tiktok,Tiktok
-- RULE-SET,Netflix,Netflix
+- "RULE-SET,Tld-not-cn_domain-text,\U0001F530 Proxy"
+- "RULE-SET,Greatfire_domain-text,\U0001F530 Proxy"
+- "RULE-SET,Gfw_domain-text,\U0001F530 Proxy"
+- RULE-SET,Netflix_ipcidr-text,Netflix
+- RULE-SET,BilibiliHMT_ipcidr-text,Bilibili
+- RULE-SET,Telegram_ipcidr-text,Telegram
+- RULE-SET,NetEaseMusic_ipcidr-text,NeteaseMusic
+- RULE-SET,NetEaseMusic_domain-text,NeteaseMusic
+- RULE-SET,BilibiliHMT_domain-text,Bilibili
+- RULE-SET,Microsoft_domain-text,Microsoft
+- RULE-SET,Bilibili_domain-text,Bilibili
+- RULE-SET,Telegram_domain-text,Telegram
+- RULE-SET,Youtube_domain-text,Youtube
+- RULE-SET,Tiktok_domain-text,Tiktok
+- RULE-SET,Netflix_domain-text,Netflix
 - "IP-CIDR,172.168.100.1/24,\U0001F3AF Direct"
 - "RULE-SET,applications,\U0001F3AF Direct"
 - "DOMAIN,clash.razord.top,\U0001F3AF Direct"
 - "DOMAIN,yacd.haishan.me,\U0001F3AF Direct"
-- "RULE-SET,private,\U0001F3AF Direct"
-- "RULE-SET,reject,\U0001F6D1 Adblock"
-- RULE-SET,icloud,Apple
-- RULE-SET,apple,Apple
-- "RULE-SET,google,\U0001F3AF Direct"
-- "RULE-SET,proxy,\U0001F530 Proxy"
-- "RULE-SET,direct,\U0001F3AF Direct"
-- "RULE-SET,lancidr,\U0001F3AF Direct"
-- "RULE-SET,cncidr,\U0001F3AF Direct"
+- "RULE-SET,Private_domain-text,\U0001F3AF Direct"
+- "RULE-SET,Reject_domain-text,\U0001F6D1 Adblock"
+- RULE-SET,Icloud_domain-text,Apple
+- RULE-SET,Apple_domain-text,Apple
+- "RULE-SET,Google_domain-text,\U0001F3AF Direct"
+- "RULE-SET,Proxy_domain-text,\U0001F530 Proxy"
+- "RULE-SET,Direct_domain-text,\U0001F3AF Direct"
+- "RULE-SET,Lan_ipcidr-text,\U0001F3AF Direct"
+- "RULE-SET,Cn_ipcidr-text,\U0001F3AF Direct"
 - "GEOIP,LAN,\U0001F3AF Direct"
 - "GEOIP,CN,\U0001F3AF Direct"
 - "MATCH,\U0001F41F Final"
