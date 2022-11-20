@@ -5,7 +5,7 @@ http:
   mitm:
     - "spclient.wg.spotify.com"
   script:
-    - match: (^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$)
+    - match: ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$
       name: spotify
       type: response
       require-body: true
@@ -13,5 +13,5 @@ http:
       
   script-providers:
     spotify:
-      url: https://cdn.jsdelivr.net/gh/sve1r/Rules-For-Quantumult-X@develop/Scripts/Unlock/Spotify-proto.js
+      url: https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js
       interval: 86400
