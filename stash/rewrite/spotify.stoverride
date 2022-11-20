@@ -6,7 +6,7 @@ http:
     - "spclient.wg.spotify.com"
   script:
     - match: ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$
-      name: spotify
+      name: spo
       type: response
       require-body: true
       timeout: 10
