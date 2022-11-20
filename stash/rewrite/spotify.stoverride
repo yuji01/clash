@@ -12,6 +12,6 @@ http:
       timeout: 10
       
   script-providers:
-    spotify:
+    spotify-test:
       url: https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js
       interval: 86400
